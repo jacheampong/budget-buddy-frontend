@@ -1,0 +1,13 @@
+
+USER STORIES
+1. As a new user, I should be able to register and use app
+2. As a registered user, I should to be able to log in and use app
+3. As a registered user, I should be to see home page when I log in to app
+4. As a logged in user, I should be able to create a new budget sheet
+5. As a logged in user, I should be able to edit budget sheet
+6. As a logged in user, I should be able to delete budget sheet
+7. As a logged in user, I should be able to create new budget breakdown sheet
+8. As a logged in user, I should be able to delete
+9. 
+10. As a logged in user, I should be able to logout
+
