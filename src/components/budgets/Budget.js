@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-export default class Article extends Component {
+export default class Budget extends Component {
   render() {
     return (
       <div>
@@ -8,12 +8,4 @@ export default class Article extends Component {
       </div>
     );
   }
-
-//   deleteArticle = (e) => {
-//     e.preventDefault();
-//     console.log('Article Id: ', this.props.id)
-    
-//     // calls parent method passed down as props
-//     this.props.deleteArticle(this.props.id)
-//   }
 }
