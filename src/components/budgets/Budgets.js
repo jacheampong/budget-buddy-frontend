@@ -1,9 +1,24 @@
 import { Component } from 'react';
 import Budget from './Budget'
+import {getAllBudgets} from '../../api'
 
 export default class Budgets extends Component { 
+
+    componentDidMount() {
+        getAllBudgets()
+        .then((response) => {
+            console.log('allBudgets', response)
+            // response.data - axios response
+            this.props.setBudgets(response.data.budgets)
+
+        }).catch((error) => {
+            console.log('API ERROR', error)
+        })
+    }
+
   render() {
-      let allBudgets = <h4>No Budget!</h4>;
+      let allBudgets = <h4>No Budget!</h4>
+
       if(this.props.budgets.length > 0) {
         allBudgets = this.props.budgets.map((budget, index) => {
             return <Budget 

@@ -8,20 +8,12 @@ export default class App extends Component {
     super(props)
 
     this.state = {
-      budgets: [
-        {
-          budgetname: 'test-budget',
-          wages: 2500,
-          rent: 700,
-          grocery: 200,
-          insurance: 30,
-          phonebill: 45,
-          carpayment: 0,
-          gasoline: 0,
-          others: 50,
-        }
-      ]
+      budgets: []
     }
+  }
+
+  setBudgets = (budgets) => {
+    this.setState({ budgets: budgets})
   }
 
   render() {
@@ -29,7 +21,10 @@ export default class App extends Component {
       <div className="App">
         <h1>React Budget Buddy!</h1>
 
-        <Budgets budgets={this.state.budgets} />
+        <Budgets 
+          budgets={this.state.budgets}
+          setBudgets={this.setBudgets} 
+        />
       </div>
     )
   }
