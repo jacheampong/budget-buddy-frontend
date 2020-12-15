@@ -68,7 +68,15 @@ class App extends Component {
         <h1>Budget 💸 Buddy!</h1>
         <Route path="/homing" exact render={() => <h2>Welcome Homing!</h2>} />
 
-        <Route path="/logout" exact render={() => <h2>Thanks for using Budget 💸 Buddy!</h2>} />
+        <Route path="/logout" exact render={
+          () => <div>
+                  <h2>Thanks for using Budget 💸 Buddy!</h2>
+                  <li>
+                    <Link to={'/login'}>Login</Link>
+                  </li>
+                </div>
+        } 
+        />
 
         <Route path="/" exact render={
           () => homePage
@@ -139,17 +147,22 @@ class App extends Component {
         this.setState({
           loginUser: userLogged,
           reqMessage: response.data.message,
-          loggedIn: true
+          loggedIn: userLogged ? true : false
         })
 
         localStorage.setItem('loginUser', userLogged)
-        localStorage.setItem('loginUserId', response.data.currentUser._id)
-        localStorage.setItem('loggedIn', true)
+        localStorage.setItem('loginUserId', userLogged ? response.data.currentUser._id : null)
+        localStorage.setItem('loggedIn', userLogged ? true : false)
         this.props.history.push('/');
 
       })
       .catch((error) => {
+        localStorage.setItem('loggedInFailed', true)
+        localStorage.setItem('loginUser', null)
+        localStorage.setItem('loggedIn', false)
+        localStorage.setItem('loginUserId', null)
         console.log('API ERROR', error)
+        this.props.history.push('/register');
       })
 
   }
