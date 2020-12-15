@@ -1,5 +1,29 @@
 import axios from 'axios'
 
+// get current user
+const getCurrentUser = () => {
+    return axios.get(`${process.env.REACT_APP_BASE_URL}api/sessions/currentUser`)
+}
+
+// get current user
+const loginUser = (username, password) => {
+    return axios.post(`${process.env.REACT_APP_BASE_URL}api/sessions/`, {
+        username, password
+    })
+}
+
+// get current user
+const logoutUser = () => {
+    return axios.post(`${process.env.REACT_APP_BASE_URL}api/sessions/logout`)
+}
+
+// get create new user
+const registerNewUser = (username, password, email, phone) => {
+    return axios.post(`${process.env.REACT_APP_BASE_URL}api/users`, {
+        username, password, email, phone
+    })
+}
+
 // get Budget by Budget Id
 const getAllBudgets = () => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}api/budgets`)
@@ -11,4 +35,4 @@ const getBudgetById = (id) => {
 }
 
 // export methods
-export {getAllBudgets, getBudgetById}
+export {getCurrentUser, registerNewUser, loginUser, getAllBudgets, getBudgetById, logoutUser}
