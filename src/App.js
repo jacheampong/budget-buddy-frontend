@@ -2,7 +2,9 @@ import { Component } from 'react';
 import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom'
 import Budgets from './components/budgets/Budgets'
-import { registerNewUser, loginUser } from './api'
+import { 
+  registerNewUser, loginUser, 
+  updateBudgetForCurrentUser, createBudgetForCurrentUser } from './api'
 import Register from './components/users/Register'
 import Login from './components/users/Login'
 
@@ -42,10 +44,12 @@ class App extends Component {
     let homePage = ''
     if(this.state.loggedIn) {
       homePage = <div>
-                    <h2>Welcome {this.state.loginUser} </h2>
+                    <h2>Welcome {this.state.loginUser}</h2>
                     <Budgets 
                       budgets={this.state.budgets}
                       setBudgets={this.setBudgets} 
+                      saveBudget={this.saveBudget}
+                      user={this.state.loginUser}
                       logout={this.logout}
                     />
                   </div>
@@ -70,7 +74,7 @@ class App extends Component {
 
         <Route path="/logout" exact render={
           () => <div>
-                  <h2>Thanks for using Budget 💸 Buddy!</h2>
+                  <h2>Thanks for using Budget 💸  Buddy!</h2>
                   <li>
                     <Link to={'/login'}>Login</Link>
                   </li>
@@ -179,6 +183,65 @@ class App extends Component {
     localStorage.setItem('loggedIn', false)
     localStorage.setItem('loginUserId', null)
     this.props.history.push('/logout');
+  }
+
+  /**
+   * saveBudget - Handles both SAVE and UPDATE budget changes
+   * if Budget form Id is null/empty, it is a form. Call save/create
+   * method. If form Id is present, call update/patch
+   * @param {*} event 
+   */
+  saveBudget = (event) => {
+    event.preventDefault();
+    console.log('In saveBudget .. ', event.target)
+    const form = event.target
+    const formData = new FormData(form)
+    const data = {}
+
+    // get all form fields
+    for (let [key, value] of formData.entries()) {
+      data[key] = parseInt(value)
+      console.log(key, value)
+    }
+    console.log(form['budgetname'].value)
+    data['_id'] = form['id']
+    data['user'] = this.state.loginUserId
+    data['budgetname'] = form['budgetname'].value
+    console.log('data => ', data);
+
+    /**
+     * if Budget form has an Id then update budget form
+     * else create new Budget form
+     */
+    if(form['id']) {
+
+      const budgetId = data['_id']
+      console.log(`Budget ID: ${budgetId} updated`)
+      updateBudgetForCurrentUser(budgetId, data)
+      .then((response) => {
+        console.log('Budget Update => ', response.data.budget)
+        let alerText = response.data.budget
+        alert(`${alerText} UPDATED!`)
+      })
+      .catch((error) => {
+        console.log('API ERROR', error)
+      })
+    } else {
+      // New form 
+      console.log('Save New Budget form!')
+      // Remove empty _id before sending post request
+      delete data._id
+      console.log('Create New Data => ', data)
+      createBudgetForCurrentUser(data)
+      .then((response) => {
+        console.log('New Budget => ', response.data.budget)
+        let budget = response.data.budget
+        alert(`${budget.budgetname} CREATED!`)
+      })
+      .catch((error) => {
+        console.log('API ERROR', error)
+      })
+    }
   }
 
 }

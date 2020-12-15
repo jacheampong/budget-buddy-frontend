@@ -29,6 +29,16 @@ const getAllBudgets = () => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}api/budgets`)
 }
 
+// create New Budget for User
+const createBudgetForCurrentUser = (data) => {
+    return axios.post(`${process.env.REACT_APP_BASE_URL}api/budgets`, data)
+}
+
+// update Budget 
+const updateBudgetForCurrentUser = (id, data) => {
+    return axios.patch(`${process.env.REACT_APP_BASE_URL}api/budgets/${id}`, data)
+}
+
 // get Budget by Budget Id
 const getAllBudgetsForUser = (userId) => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}api/budgets/user/${userId}`)
@@ -47,5 +57,7 @@ export {
     getAllBudgets, 
     getBudgetById, 
     logoutUser,
-    getAllBudgetsForUser
+    getAllBudgetsForUser,
+    createBudgetForCurrentUser,
+    updateBudgetForCurrentUser
 }
