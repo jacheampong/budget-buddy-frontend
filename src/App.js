@@ -46,6 +46,7 @@ class App extends Component {
                     <Budgets 
                       budgets={this.state.budgets}
                       setBudgets={this.setBudgets} 
+                      logout={this.logout}
                     />
                   </div>
     } else {
@@ -64,8 +65,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>React Budget Buddy!</h1>
+        <h1>Budget 💸 Buddy!</h1>
         <Route path="/homing" exact render={() => <h2>Welcome Homing!</h2>} />
+
+        <Route path="/logout" exact render={() => <h2>Thanks for using Budget 💸 Buddy!</h2>} />
 
         <Route path="/" exact render={
           () => homePage
@@ -162,7 +165,7 @@ class App extends Component {
     localStorage.setItem('loginUser', null)
     localStorage.setItem('loggedIn', false)
     localStorage.setItem('loginUserId', null)
-    this.props.history.push('/');
+    this.props.history.push('/logout');
   }
 
 }

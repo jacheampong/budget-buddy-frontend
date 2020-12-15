@@ -33,6 +33,7 @@ export default class Budgets extends Component {
                     carpayment={budget.carpayment}
                     gasoline={budget.gasoline}
                     others={budget.others} 
+                    
                     key={index}
                     />
         })
@@ -42,7 +43,9 @@ export default class Budgets extends Component {
       <div className="App">
         <h1>All Budgets !</h1>
 
-        {allBudgets}
+        {allBudgets }
+
+        <button onClick={this.props.logout}>Logout</button>
       </div>
     )
   }
