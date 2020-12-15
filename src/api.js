@@ -30,9 +30,22 @@ const getAllBudgets = () => {
 }
 
 // get Budget by Budget Id
+const getAllBudgetsForUser = (userId) => {
+    return axios.get(`${process.env.REACT_APP_BASE_URL}api/budgets/user/${userId}`)
+}
+
+// get Budget by Budget Id
 const getBudgetById = (id) => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}api/budgets/${id}`)
 }
 
 // export methods
-export {getCurrentUser, registerNewUser, loginUser, getAllBudgets, getBudgetById, logoutUser}
+export {
+    getCurrentUser, 
+    registerNewUser, 
+    loginUser, 
+    getAllBudgets, 
+    getBudgetById, 
+    logoutUser,
+    getAllBudgetsForUser
+}

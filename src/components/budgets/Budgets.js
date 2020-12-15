@@ -1,13 +1,15 @@
 import { Component } from 'react';
 import Budget from './Budget'
-import {getAllBudgets} from '../../api'
+import {getAllBudgetsForUser} from '../../api'
 
 export default class Budgets extends Component { 
 
     componentDidMount() {
-        getAllBudgets()
+      const loggedIn = localStorage.getItem('loggedIn') === 'true';
+      const loginUserId = loggedIn ? localStorage.getItem('loginUserId') : null
+      getAllBudgetsForUser(loginUserId)
         .then((response) => {
-            console.log('allBudgets', response)
+            console.log('allBudgetsForUser', response)
             // response.data - axios response
             this.props.setBudgets(response.data.budgets)
 

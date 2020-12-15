@@ -11,7 +11,8 @@ class App extends Component {
   componentDidMount() {
     const loggedIn = localStorage.getItem('loggedIn') === 'true';
     const loginUser = loggedIn ? localStorage.getItem('loginUser') : '';
-    this.setState({ loginUser, loggedIn });
+    const loginUserId = loggedIn ? localStorage.getItem('loginUserId') : null
+    this.setState({ loginUser, loggedIn, loginUserId });
   }
   
   constructor(props) {
@@ -22,6 +23,7 @@ class App extends Component {
       newUser: '',
       reqMessage: '',
       loginUser: '',
+      loginUserId: '',
       loggedIn: false,
       budgets: [],
     }
@@ -138,6 +140,7 @@ class App extends Component {
         })
 
         localStorage.setItem('loginUser', userLogged)
+        localStorage.setItem('loginUserId', response.data.currentUser._id)
         localStorage.setItem('loggedIn', true)
         this.props.history.push('/');
 
@@ -158,6 +161,7 @@ class App extends Component {
 
     localStorage.setItem('loginUser', null)
     localStorage.setItem('loggedIn', false)
+    localStorage.setItem('loginUserId', null)
     this.props.history.push('/');
   }
 
