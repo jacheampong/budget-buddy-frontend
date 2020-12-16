@@ -98,16 +98,29 @@ class App extends Component {
 
         <Route path="/logout" exact render={
           () => <div>
-                  <h2>Thanks for using Budget 💸  Buddy!</h2>
-                  <li>
-                    <Link to={'/login'}>Login</Link>
-                  </li>
-                  <li>
-                    <Link to={`/register`}>Register</Link>
-                  </li>
-                  <li>
-                    <Link to={`/`}>Home 💸  </Link>
-                  </li>
+                  <Row class="container">
+                    <div class="col s10 m8">
+                      <div class="card hoverable">
+                        <div class="card-image">
+                          <img src="/images/budget-buddy-2.jpg" alt="budget-buddy" ></img>
+                          {/* <span class="card-title blue-text text-lighten-5"><h4>Welcome to Buddy!</h4></span> */}
+                          <a href="/login" class="btn-floating halfway-fab waves-effect waves-light red pulse">
+                            <Link to={`/`}><i class="material-icons">home</i></Link>
+                          </a>
+                        </div>
+                        <div class="card-content">
+                          <h3>Thanks for using <br/> Budget <Link to={'/'}>💸</Link>  Buddy!</h3>
+                        </div>
+                        <div class="card-action">
+                          <br/>
+                          <Link to={'/'}>
+                            <i class="material-icons prefix waves-effect waves-light teal lighten-2 pulse"><h4>B💸B</h4></i>
+                          </Link>
+                          <br /><br/>
+                        </div>
+                      </div>
+                    </div>
+                    </Row>
                 </div>
         } 
         />
