@@ -69,11 +69,11 @@ class App extends Component {
                           </a>
                         </div>
                         <div class="card-content">
-                          <p>
-                            Welcome to our simple budget app. <br/>
-                            Enjoy the path to Financial Freedom!<br/>
-                            Enjoy Budgetting 💸 
-                          </p>
+                          <h6>
+                            Enjoy your path to Financial Freedom<br/>
+                            with worlds simplest budgeting app <br/>
+                            BUDGET 💸  BUDDY
+                          </h6>
                         </div>
                         <div class="card-action">
                           <i class="material-icons prefix">login</i>
@@ -94,8 +94,6 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Budget 💸  Buddy!</h1>
-        <Route path="/homing" exact render={() => <h2>Welcome Homing!</h2>} />
-
         <Route path="/logout" exact render={
           () => <div>
                   <Row class="container">
