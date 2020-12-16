@@ -7,6 +7,9 @@ import {
   updateBudgetForCurrentUser, createBudgetForCurrentUser } from './api'
 import Register from './components/users/Register'
 import Login from './components/users/Login'
+import './index.css';
+import { Row } from 'react-materialize';
+
 
 class App extends Component { 
 
@@ -55,21 +58,42 @@ class App extends Component {
                   </div>
     } else {
       homePage = <div>
-                  <h2>Welcome to Buddy!</h2>
-                  <ul>
-                    <li>
-                      <Link to={`/register`}>Register</Link>
-                    </li>
-                    <li>
-                      <Link to={'/login'}>Login</Link>
-                    </li>
-                  </ul>
+                  <Row class="container">
+                    <div class="col s10 m8">
+                      <div class="card hoverable">
+                        <div class="card-image">
+                          <img src="/images/budget-buddy.jpg" alt="budget-buddy" ></img>
+                          <span class="card-title blue-text text-lighten-5"><h4>Welcome to Buddy!</h4></span>
+                          <a href="/login" class="btn-floating halfway-fab waves-effect waves-light red pulse">
+                            <Link to={`/login`}><i class="material-icons">login</i></Link>
+                          </a>
+                        </div>
+                        <div class="card-content">
+                          <p>
+                            Welcome to our simple budget app. <br/>
+                            Enjoy the path to Financial Freedom!<br/>
+                            Enjoy Budgetting 💸 
+                          </p>
+                        </div>
+                        <div class="card-action">
+                          <i class="material-icons prefix">login</i>
+                          <Link to={'/login'}>Login</Link>
+                          <br /><br/>
+                          <i class="material-icons prefix">how_to_reg</i>
+                          <Link to={`/register`}>Register</Link>
+                        </div>
+                        <a href="/register" class="btn-floating halfway-fab waves-effect waves-light red pulse">
+                          <Link to={`/register`}><i class="material-icons">how_to_reg</i></Link>
+                        </a>
+                      </div>
+                    </div>
+                    </Row>
                 </div>
     }
 
     return (
       <div className="App">
-        <h1>Budget 💸 Buddy!</h1>
+        <h1>Budget 💸  Buddy!</h1>
         <Route path="/homing" exact render={() => <h2>Welcome Homing!</h2>} />
 
         <Route path="/logout" exact render={
@@ -77,6 +101,12 @@ class App extends Component {
                   <h2>Thanks for using Budget 💸  Buddy!</h2>
                   <li>
                     <Link to={'/login'}>Login</Link>
+                  </li>
+                  <li>
+                    <Link to={`/register`}>Register</Link>
+                  </li>
+                  <li>
+                    <Link to={`/`}>Home 💸  </Link>
                   </li>
                 </div>
         } 
@@ -123,10 +153,13 @@ class App extends Component {
         this.setState({
           newUser: response.data.user.username
         })
+        let newUser = response.data.user.username
+        alert(`New User ${newUser} CREATED!`)
       })
       .catch((error) => {
         console.log('API ERROR', error)
       })
+      this.props.history.push('/');
   }
 
   /**
