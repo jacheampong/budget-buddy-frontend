@@ -40,6 +40,7 @@ export default class Budgets extends Component {
                     gasoline={budget.gasoline}
                     others={budget.others} 
                     total={budget.total}
+                    user={budget.user}
                     saveBudget={this.props.saveBudget}
                     
                     key={index}
