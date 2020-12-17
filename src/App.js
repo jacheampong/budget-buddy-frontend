@@ -193,14 +193,16 @@ class App extends Component {
                           : null
         // response.data - axios response
         this.setCurrentUser(response.data.currentUser)
+        let loginUserId = response.data.currentUser._id
         this.setState({
+          loginUserId: loginUserId,
           loginUser: userLogged,
           reqMessage: response.data.message,
           loggedIn: userLogged ? true : false
         })
 
         localStorage.setItem('loginUser', userLogged)
-        localStorage.setItem('loginUserId', userLogged ? response.data.currentUser._id : null)
+        localStorage.setItem('loginUserId', userLogged ? loginUserId : null)
         localStorage.setItem('loggedIn', userLogged ? true : false)
         this.props.history.push('/');
 
@@ -272,7 +274,12 @@ class App extends Component {
     }
     console.log(form['budgetname'].value)
     data['_id'] = form['id']
-    data['user'] = this.state.loginUserId
+
+    const loggedIn = localStorage.getItem('loggedIn') === 'true';
+    const loginUserId = loggedIn ? localStorage.getItem('loginUserId') : null
+
+    // get userId from component state or localStorage
+    data['user'] = this.state.loginUserId ? this.state.loginUserId : loginUserId
     data['budgetname'] = form['budgetname'].value
     console.log('data => ', data);
 
