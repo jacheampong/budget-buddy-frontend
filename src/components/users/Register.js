@@ -50,6 +50,7 @@ export default class Register extends Component {
                                     >
                                         Register <i class="material-icons right">send</i>
                                 </button>
+                                <br/><br/>
                                 </form>
 
                                 <Link to={`/`}>HOME</Link>

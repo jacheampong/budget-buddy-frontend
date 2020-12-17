@@ -36,8 +36,8 @@ export default class Login extends Component {
                                     >
                                         Login In <i class="material-icons right">send</i>
                                 </button>
+                                <br/><br/>
                                 </form>
-
                                 <Link to={`/`}>HOME</Link>
                             </div>
                             
