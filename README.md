@@ -4,7 +4,19 @@
 
 ### *** Jonathan Acheampong ***
 
-[Budget Buddy](https://expressjs.com/) is a simple financial app that helps users estimate monthly budget based on income/wages.
+
+
+### [Budget Buddy](https://budget-buddy-front.herokuapp.com/#/) is a simple financial app that helps users estimate monthly budget based on income/wages.
+
+
+### Main Page
+![Budget Buddy - Main](./images/landing-page.png) 
+
+### Registration Page
+![Budget Buddy - Registration Page](./images/registration-page.png) 
+
+### Login Page
+![Budget Buddy - Login Page](./images/login-page.png) 
 
 
 ## 1. Technology Stack:
