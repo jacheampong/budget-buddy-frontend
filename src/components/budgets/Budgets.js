@@ -50,12 +50,12 @@ export default class Budgets extends Component {
 
     return (
       <div className="App">
-        <h1>All Budgets !</h1>
 
         {allBudgets }
         
-        <br /><br />
+        <br />
         <button onClick={this.props.logout}>Logout</button>
+        <br />
       </div>
     )
   }
