@@ -3,12 +3,13 @@ import './App.css';
 import { Route, Link, withRouter } from 'react-router-dom'
 import Budgets from './components/budgets/Budgets'
 import { 
-  registerNewUser, loginUser, 
+  registerNewUser, loginUser, logoutUser,
   updateBudgetForCurrentUser, createBudgetForCurrentUser } from './api'
 import Register from './components/users/Register'
 import Login from './components/users/Login'
 import './index.css';
 import { Row } from 'react-materialize';
+import "materialize-css/dist/css/materialize.min.css";
 
 
 class App extends Component { 
@@ -63,17 +64,17 @@ class App extends Component {
                       <div class="card hoverable">
                         <div class="card-image">
                           <img src="/images/budget-buddy.jpg" alt="budget-buddy" ></img>
-                          <span class="card-title blue-text text-lighten-5"><h4>Welcome to Buddy!</h4></span>
-                          <a href="/login" class="btn-floating halfway-fab waves-effect waves-light red pulse">
+                          <span class="card-title purple-text text-accent-3"><h4 class="welcome-text" >Welcome to Buddy! ...</h4></span>
+                          <a href="/login" class="btn-floating halfway-fab waves-effect waves-light green pulse">
                             <Link to={`/login`}><i class="material-icons">login</i></Link>
                           </a>
                         </div>
                         <div class="card-content">
-                          <h6>
+                          <p class="home-text">
                             Enjoy your path to Financial Freedom<br/>
                             with worlds simplest budgeting app <br/>
                             BUDGET 💸  BUDDY
-                          </h6>
+                          </p>
                         </div>
                         <div class="card-action">
                           <i class="material-icons prefix">login</i>
@@ -82,7 +83,7 @@ class App extends Component {
                           <i class="material-icons prefix">how_to_reg</i>
                           <Link to={`/register`}>Register</Link>
                         </div>
-                        <a href="/register" class="btn-floating halfway-fab waves-effect waves-light red pulse">
+                        <a href="/register" class="btn-floating halfway-fab waves-effect waves-light green pulse">
                           <Link to={`/register`}><i class="material-icons">how_to_reg</i></Link>
                         </a>
                       </div>
@@ -93,7 +94,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Budget 💸  Buddy!</h1>
+        <h2 class="budget-header">Budget 💸  Buddy!</h2>
         <Route path="/logout" exact render={
           () => <div>
                   <Row class="container">
@@ -223,9 +224,31 @@ class App extends Component {
     console.log('Logout Buddy ...')
     event.preventDefault();
 
-    localStorage.setItem('loginUser', null)
-    localStorage.setItem('loggedIn', false)
-    localStorage.setItem('loginUserId', null)
+    // localStorage.setItem('loginUser', null)
+    // localStorage.setItem('loggedIn', false)
+    // localStorage.setItem('loginUserId', null)
+    logoutUser()
+      .then((response) => {
+        console.log('Budget Update => ', response.data.currentUser)
+        let loggedOutUser = response.data.currentUser
+        localStorage.setItem('loginUser', loggedOutUser)
+        localStorage.setItem('loggedIn', false)
+        localStorage.setItem('loginUserId', response.data.currentUser)
+        
+        // update states
+        this.setState({
+          currentUser: loggedOutUser,
+          newUser: '',
+          reqMessage: '',
+          loginUser: '',
+          loginUserId: '',
+          loggedIn: false,
+
+        })
+      })
+      .catch((error) => {
+        console.log('API ERROR', error)
+      })
     this.props.history.push('/logout');
   }
 
