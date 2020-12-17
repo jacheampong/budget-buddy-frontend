@@ -12,9 +12,9 @@ const loginUser = (username, password) => {
     })
 }
 
-// get current user
+// get logout current user
 const logoutUser = () => {
-    return axios.post(`${process.env.REACT_APP_BASE_URL}api/sessions/logout`)
+    return axios.delete(`${process.env.REACT_APP_BASE_URL}api/sessions/logout`)
 }
 
 // get create new user
