@@ -19,14 +19,14 @@ export default class Login extends Component {
                                     <div class="input-field col s10">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input id="icon_prefix" type="text" name="username" class="validate" />
-                                    <label for="icon_prefix">User Name</label>
+                                    <label htmlFor="icon_prefix">User Name</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s10">
                                     <i class="material-icons prefix">password</i>
                                     <input id="password" type="password" name="password" class="validate" />
-                                    <label for="password">Password</label>
+                                    <label htmlFor="password">Password</label>
                                     </div>
                                 </div>
                                 <button 
