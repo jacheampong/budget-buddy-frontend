@@ -11,3 +11,14 @@ USER STORIES
 9. 
 10. As a logged in user, I should be able to logout
 
+ISSUE
+forwarding/Redirecting
+session & Authentication
+saving mongo ObjectId with req.body.user = mongoose.Types.ObjectId(req.body.user)
+
+CSS
+- Started with antd 
+- Changed to materializecss 
+- Implementing Tab: required JavaScript
+-- and componentDidMount() setup 
+
