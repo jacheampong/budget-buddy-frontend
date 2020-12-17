@@ -53,9 +53,8 @@ export default class Budgets extends Component {
 
         {allBudgets }
         
-        <br />
         <button onClick={this.props.logout}>Logout</button>
-        <br />
+        <br /><br />
       </div>
     )
   }

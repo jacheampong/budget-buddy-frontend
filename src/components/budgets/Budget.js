@@ -41,31 +41,39 @@ export default class Budget extends Component {
 
               <div id="test-swipe-1" className="col s8">
                 <div className="container">
-                  <form name="form-budget" id={this.props.budgetid} onSubmit={this.props.saveBudget} >
-                    <input hidden name="budgetname" defaultValue={this.props.budgetname} />
-                    <label htmlFor="Wages">Wages:</label>
-                    <input type="number" ref="wages" name="wages" defaultValue={this.props.wages} required onChange={this.changeHandler} />
-                    <label htmlFor="rent">rent:</label>
-                    <input type="number" ref="rent" name="rent" defaultValue={this.props.rent | 0}  onChange={this.changeHandler} />
-                    <label htmlFor="grocery">grocery:</label>
-                    <input type="number" ref="grocery" name="grocery" defaultValue={this.props.grocery | 0}  onChange={this.changeHandler} />
-                    <label htmlFor="insurance">insurance:</label>
-                    <input type="number" ref="insurance" name="insurance" defaultValue={this.props.insurance | 0}  onChange={this.changeHandler} />
-                    <label htmlFor="phonebill">phonebill:</label>
-                    <input type="number" ref="phonebill" name="phonebill" defaultValue={this.props.phonebill | 0}  onChange={this.changeHandler} />
-                    <label htmlFor="carpayment">carpayment:</label>
-                    <input type="number" ref="carpayment" name="carpayment" defaultValue={this.props.carpayment | 0}  onChange={this.changeHandler} />
-                    <label htmlFor="gasoline">gasoline:</label>
-                    <input type="number" ref="gasoline" name="gasoline" defaultValue={this.props.gasoline | 0}  onChange={this.changeHandler} />
-                    <label htmlFor="others">others:</label>
-                    <input type="number" ref="others" name="others" defaultValue={this.props.others | 0}  onChange={this.changeHandler} />
-                    <label htmlFor="total"><h6 >Total Expense:</h6></label>
-                    <input type="number" name="total" value={this.state.total | 0} readOnly />
-                    <br /><br />
+                  <Row class="container">
+                    <div class="col s10 m8">
+                      <div class="card hoverable teal accent-1">
 
-                    <input type="submit" value="Save" onSubmit={this.props.saveBudget} ></input>
-                    <br /><br />
-                  </form>
+                        <form name="form-budget" id={this.props.budgetid} onSubmit={this.props.saveBudget} >
+                          <input hidden name="budgetname" defaultValue={this.props.budgetname} />
+                          <label htmlFor="Wages">Wages:</label>
+                          <input type="number" ref="wages" name="wages" defaultValue={this.props.wages} required onChange={this.changeHandler} />
+                          <label htmlFor="rent">rent:</label>
+                          <input type="number" ref="rent" name="rent" defaultValue={this.props.rent | 0}  onChange={this.changeHandler} />
+                          <label htmlFor="grocery">grocery:</label>
+                          <input type="number" ref="grocery" name="grocery" defaultValue={this.props.grocery | 0}  onChange={this.changeHandler} />
+                          <label htmlFor="insurance">insurance:</label>
+                          <input type="number" ref="insurance" name="insurance" defaultValue={this.props.insurance | 0}  onChange={this.changeHandler} />
+                          <label htmlFor="phonebill">phonebill:</label>
+                          <input type="number" ref="phonebill" name="phonebill" defaultValue={this.props.phonebill | 0}  onChange={this.changeHandler} />
+                          <label htmlFor="carpayment">carpayment:</label>
+                          <input type="number" ref="carpayment" name="carpayment" defaultValue={this.props.carpayment | 0}  onChange={this.changeHandler} />
+                          <label htmlFor="gasoline">gasoline:</label>
+                          <input type="number" ref="gasoline" name="gasoline" defaultValue={this.props.gasoline | 0}  onChange={this.changeHandler} />
+                          <label htmlFor="others">others:</label>
+                          <input type="number" ref="others" name="others" defaultValue={this.props.others | 0}  onChange={this.changeHandler} />
+                          <label htmlFor="total"><h6 >Total Expense:</h6></label>
+                          <input type="number" name="total" value={this.state.total | 0} readOnly />
+                          <br /><br />
+
+                          <input type="submit" value="Save" onSubmit={this.props.saveBudget} ></input>
+                          <br /><br />
+                        </form>
+
+                      </div>
+                    </div>
+                    </Row>
                 </div>
               </div>
 
@@ -73,7 +81,7 @@ export default class Budget extends Component {
                 <div>
                   <Row class="container">
                     <div class="col s10 m8">
-                      <div class="card hoverable">
+                      <div class="card hoverable teal accent-1">
 
                         <div class="card-image">
                           <img src="/images/50-30-20_budget.jpg" alt="budget-buddy" ></img>
