@@ -48,7 +48,7 @@ class App extends Component {
     let homePage = ''
     if(this.state.loggedIn) {
       homePage = <div>
-                    <h2>Welcome {this.state.loginUser}</h2>
+                    <h3 class="greeting-text" >Welcome {this.state.loginUser}</h3>
                     <Budgets 
                       budgets={this.state.budgets}
                       setBudgets={this.setBudgets} 
@@ -113,7 +113,8 @@ class App extends Component {
                         <div class="card-action">
                           <br/>
                           <Link to={'/'}>
-                            <i class="material-icons prefix waves-effect waves-light teal lighten-2 pulse"><h4>B💸B</h4></i>
+                            {/* <i class="material-icons prefix waves-effect waves-light teal lighten-2 large square pulse"><h4> 💸 </h4></i> */}
+                            <i class="material-icons prefix waves-effect waves-light teal lighten-2 large "> account_balance </i>
                           </Link>
                           <br /><br/>
                         </div>
