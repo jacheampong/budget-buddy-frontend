@@ -144,10 +144,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 3. As a registered user, I should be to see home page when I log in to app  **Status: Completed**
 4. As a logged in user, I should be able to create a new budget sheet **Status: Completed**
 5. As a logged in user, I should be able to edit budget sheet **Statu:s Completed**
-6. As a user, I should be able to select one of artist from track **Status: Work In Progress**
+6.  As a logged in user, I should be able to logout **Status: Completed**
 7. As a logged in user, I should be able to create a new 50/30/20 estimate **Status: Completed**
-8. As a logged in user, I should be able to logout **Status: Completed**
+8. As a logged in user, I should be able to delete budget sheet **Status: Work In Progress**
 9. As a user, I should be able to create more than 1 budget sheet **Status: Future Enhancement**
+10. As a logged in user, I should be able to delete more than 1 budget sheet **Status: Future Enhancement**
 
 <br />
 
