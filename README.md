@@ -175,6 +175,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Add Financial news feed by calling third party api
 * Incorporate Redux
 * Use a Docker container for development and deployment
+* Move some of the code in App.js into a separate component: Homepage and Logout 
 
 <br />
 
