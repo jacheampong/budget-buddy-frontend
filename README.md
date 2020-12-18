@@ -4,10 +4,11 @@
 
 ### *** Jonathan Acheampong ***
 
+<br />
 
+### [Budget Buddy](https://budget-buddy-front.herokuapp.com/#/) is a simple personal financial app. It enable users to estimate their monthly budget based on income/wages, expense - needs and wants.
 
-### [Budget Buddy](https://budget-buddy-front.herokuapp.com/#/) is a simple financial app that helps users estimate monthly budget based on income/wages.
-
+<br /><br />
 
 ### Main Page
 ![Budget Buddy - Main](./images/landing-page.png) 
@@ -18,14 +19,18 @@
 ### Login Page
 ![Budget Buddy - Login Page](./images/login-page.png) 
 
+<br />
 
 ## 1. Technology Stack:
 ### 1.1 Backend [Github](https://github.com/jacheampong/budget-buddy-backend)
 * Node [Express](https://expressjs.com/) with [MongoDB](https://www.mongodb.com/) +  [Mongoose js](https://mongoosejs.com/)
 * Deployed at [budget-buddy-end](https://budget-buddy-end.herokuapp.com/)
 
+<br />
 
-### 1.2 Frontend: [Github](https://github.com/jacheampong/budget-buddy-frontend)
+### 1.2 Frontend App:
+### [Github Repo](https://github.com/jacheampong/budget-buddy-frontend)
+###  [Heroku Depolyed](https://budget-buddy-front.herokuapp.com/)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 * [React JavaScript library](https://reactjs.org/)
@@ -35,8 +40,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * AJAX and [AXIOS API](https://github.com/axios/axios) for API backed Access
 * Postman for API/backend Testing
 * Heroku cloud application platform for deployment
-* Deployed at [Coming Soon]()
 
+<br />
 
 ## 2. Backend API Endpoints
 <table>
@@ -112,7 +117,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 </tbody>
 </table>
 
-*** Not Active from frontend app
+*** Not Active from frontend app 
+
+<br />
 
 ## 3. Design Components
 ### [Wireframes](https://docs.google.com/presentation/d/1rZr7QCor-U1FLlpr4caa1bF7kRCneiAOUoVqS7xn9kA/edit?usp=sharing)
@@ -128,7 +135,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 #### 3.3 Wireframe - 50/30/20 Budget Page
 ![Wireframe - Budget](./images/wire-50-budget-page.png) 
 
-
+<br />
 
 ## 4. User Stories
 
@@ -137,14 +144,29 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 3. As a registered user, I should be to see home page when I log in to app  **Status: Completed**
 4. As a logged in user, I should be able to create a new budget sheet **Status: Completed**
 5. As a logged in user, I should be able to edit budget sheet **Statu:s Completed**
-6. As a user, I should be able to select one of artist from track **Status: Not Complete**
+6. As a user, I should be able to select one of artist from track **Status: Work In Progress**
 7. As a logged in user, I should be able to create a new 50/30/20 estimate **Status: Completed**
 8. As a logged in user, I should be able to logout **Status: Completed**
 9. As a user, I should be able to create more than 1 budget sheet **Status: Future Enhancement**
 
+<br />
 
 ## 5. MVP (Minimum Viable Product) Requirement 
+### Technical Requirements
+* Create 2 apps: React frontend that communicates with a backend API **Status: Complete**
 
+* Backend API Options: Express with Mongo + Mongoose **Status: Complete**
+
+* Be a complete product **Status: Complete**
+* Implement thoughtful user stories **Status: Complete**
+* Be deployed online **Status: Complete**
+
+<br />
+
+## 6. Bonus Suggestions
+* Add Authentication **Status: Complete**
+ 
+<br />
 
 ## Available Scripts
 
