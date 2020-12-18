@@ -54,6 +54,7 @@ class App extends Component {
                       setBudgets={this.setBudgets} 
                       saveBudget={this.saveBudget}
                       user={this.state.loginUser}
+                      deleteBudget={this.deleteBudget}
                       logout={this.logout}
                     />
                   </div>
@@ -317,6 +318,12 @@ class App extends Component {
         console.log('API ERROR', error)
       })
     }
+  }
+
+  deleteBudget = (event) => {
+    console.log('In deleteBudget ...')
+    event.preventDefault();
+
   }
 
 }

@@ -49,6 +49,11 @@ const getBudgetById = (id) => {
     return axios.get(`${process.env.REACT_APP_BASE_URL}api/budgets/${id}`)
 }
 
+// delete Budget by Budget Id
+const deleteBudgetById = (id) => {
+    return axios.delete(`${process.env.REACT_APP_BASE_URL}api/budgets/${id}`)
+}
+
 // export methods
 export {
     getCurrentUser, 
@@ -59,5 +64,6 @@ export {
     logoutUser,
     getAllBudgetsForUser,
     createBudgetForCurrentUser,
-    updateBudgetForCurrentUser
+    updateBudgetForCurrentUser,
+    deleteBudgetById
 }

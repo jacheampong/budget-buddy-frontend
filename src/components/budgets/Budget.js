@@ -68,7 +68,10 @@ export default class Budget extends Component {
                           <br /><br />
 
                           <input type="submit" value="Save" onSubmit={this.props.saveBudget} ></input>
+
                           <br /><br />
+                          <a href="/" onClick={this.deleteBudget}><i class="material-icons">delete</i></a>
+                          <br />
                         </form>
 
                       </div>
@@ -237,6 +240,18 @@ export default class Budget extends Component {
     document.querySelector("#wants").value = wants
     document.querySelector("#savings").value = savings
 
+  }
+
+  /**
+   * deleteBudget - calls parent delete method
+   * @param {*} e 
+   */
+  deleteBudget = (e) => {
+    e.preventDefault();
+    console.log('Budget Id: ', this.props.budgetid)
+    
+    // calls parent method passed down as props
+    this.props.deleteBudget(this.props.budgetid)
   }
 
 }

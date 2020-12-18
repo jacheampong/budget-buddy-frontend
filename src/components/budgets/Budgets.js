@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Budget from './Budget'
-import {getAllBudgetsForUser} from '../../api'
+import {getAllBudgetsForUser, deleteBudgetById} from '../../api'
 
 export default class Budgets extends Component { 
 
@@ -26,7 +26,7 @@ export default class Budgets extends Component {
                         saveBudget={this.props.saveBudget}
                       />
 
-      if(this.props.budgets.length > 0) {
+      if(this.props.budgets && this.props.budgets.length > 0) {
         allBudgets = this.props.budgets.map((budget, index) => {
             return <Budget 
                     budgetid={budget._id}
@@ -42,6 +42,7 @@ export default class Budgets extends Component {
                     total={budget.total}
                     user={budget.user}
                     saveBudget={this.props.saveBudget}
+                    deleteBudget={this.deleteBudget}
                     
                     key={index}
                     />
@@ -57,6 +58,21 @@ export default class Budgets extends Component {
         <br /><br />
       </div>
     )
+  }
+
+  // Make a call to API to Delete Budget
+  deleteBudget = (id) => {
+    console.log('Budget Id: ', id)
+    deleteBudgetById(id)
+      .then((response) => {
+        console.log(`The Budget to be deleted: ${id}`)
+        alert(`BUDGET DELETED!`)
+
+        this.props.setBudgets(null)
+      })
+      .catch((error) => {
+        console.log('API ERROR', error)
+      })
   }
 
 }
