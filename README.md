@@ -7,6 +7,8 @@
 <br />
 
 ### [Budget Buddy](https://budget-buddy-front.herokuapp.com/#/) is a simple personal financial app. It enable users to estimate their monthly budget based on income/wages, expense - needs and wants.
+<br />
+Project idea developed from my interest in personal finance.<br/> I am interested in the principle of Financial Independence and Retire Entire <span style="color:red">(FIRE)</span>
 
 <br /><br />
 
