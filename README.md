@@ -96,7 +96,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <td>7</td>
 <td>Budget</td>
 <td>DELETE /api/budgets/:id</td>
-<td>Delete Budget by Budget ID ***</td>
+<td>Delete Budget by Budget ID</td>
 </tr>
 <tr>
 <td>8</td>
@@ -148,7 +148,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 5. As a logged in user, I should be able to edit budget sheet **Statu:s Completed**
 6.  As a logged in user, I should be able to logout **Status: Completed**
 7. As a logged in user, I should be able to create a new 50/30/20 estimate **Status: Completed**
-8. As a logged in user, I should be able to delete budget sheet **Status: Work In Progress**
+8. As a logged in user, I should be able to delete budget sheet **Status: Completed**
 9. As a user, I should be able to create more than 1 budget sheet **Status: Future Enhancement**
 10. As a logged in user, I should be able to delete more than 1 budget sheet **Status: Future Enhancement**
 
@@ -172,7 +172,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <br />
 
 ## 7. Unsolved Issues and Future Enhancements
-* Delete Budget sheet button - currently Work in progress
 * Ability to create and save more than one (1) budget sheet per user account
 * Add Financial news feed by calling third party api
 * Incorporate Redux
