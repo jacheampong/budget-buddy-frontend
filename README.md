@@ -169,6 +169,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  
 <br />
 
+## 7. Unsolved Issues and Future Enhancements
+* Delete Budget sheet button - currently Work in progress
+* Ability to create and save more than one (1) budget sheet per user account
+* Add Financial news feed by calling third party api
+* Incorporate Redux
+* Use a Docker container for development and deployment
+
+<br />
+
 ## Available Scripts
 
 In the project directory, you can run:
